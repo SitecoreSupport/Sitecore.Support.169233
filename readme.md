@@ -1,5 +1,5 @@
 # Sitecore.Support.169233
-Display values from the &#8220;Parameters&#8221; field in the &#8220;Form Designer&#8221; application
+This patch displays values from the `Parameters` field for `List` fields in the `Form Designer` application.
 
 ## License  
 This patch is licensed under the [Sitecore Corporation A/S License for GitHub](https://github.com/sitecoresupport/Sitecore.Support.169233/blob/master/LICENSE).  
