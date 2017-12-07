@@ -499,6 +499,16 @@
             var parameter = $(propertyID);
             var name = propertyID.substring(prefix.length, propertyID.length);
 
+            // Sitecore.Support.169233
+            if (localize == "1" && name == "Items" && properties[name] == null) {
+                var fieldNotLoc = $($F("Active") + "_field_properties");
+                var propertiesNotLoc = Sitecore.Parser.parseXMLToArray(fieldNotLoc.value);
+                if (propertiesNotLoc[name] != null) {
+                    properties[name] = propertiesNotLoc[name];
+                    field.value = Sitecore.Parser.toXml(properties);
+                }
+            }
+
             var value = "";
             if (parameter.tagName == "SELECT" && (propertyID == prefix + "SelectedValue")) {
                 $A(parameter.options).each(function (element) {
